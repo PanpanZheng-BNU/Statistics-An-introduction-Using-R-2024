@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
+    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/solid.css" />
+		<link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
+
+		<style>
+		figure {
+			text-align:center;
+		}
+		figcaption {
+			font-size: smaller;
+			text-align: justify;
+			padding: 0 10%;
+		}
+		</style>
+
+		<!-- Also insert you custom css -->
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: '',
+        repo: '',
+        loadSidebar: true,
+        subMaxLevel: 0,
+        'flexible-alerts': {
+          style: 'flat',
+          comment: {
+            label: 'Comment',
+
+            // localization
+            label: {
+              '/en-GB/': 'Comment',
+              '/': 'Quote'
+            },
+
+            // Assuming that we use Font Awesome
+            icon: 'fas fa-quote-right',
+            className: 'note'
+          }
+        },
+        alias: {
+          '/.*/_sidebar.md': '/_sidebar.md'
+        },
+				latex: {
+					inlineMath   : [['$', '$'], ['\\(', '\\)']], // default
+					displayMath  : [['$$', '$$']],               // default
+				},
+        mermaidConfig: {
+          querySelector: ".mermaid"
+        },
+				toc: {
+					tocMaxLevel: 5,
+					target: 'h2, h3, h4, h5, h6',
+					ignoreHeaders:  ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
+				},
+      }
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <!--mathjax begin-->
+		<!--<script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
+		<!--<script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>-->
+    <!--mathjax end-->
+    <!--katex begin-->
+		<script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+		<script src="//cdn.jsdelivr.net/npm/marked@4"></script>
+    <!-- CDN files for docsify-katex -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <!--katex end-->
+    <!--code highlight begin  -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-julia.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-r.js"></script>
+
+    <!--code highlight end -->
+    <!--mermaid begin-->
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
+      window.mermaid = mermaid;
+    </script>
+    <script src="//unpkg.com/docsify-mermaid@2.0.0/dist/docsify-mermaid.js"></script>
+    <!--mermaid end -->
+    <!-- Latest -->
+    <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+    <script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+		<script src="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
+
+		 <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+
+   <!-- Recommended -->
+   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
+	 <script src="https://cdn.jsdelivr.net/npm/docsify-wikilink@1"></script>
+
+		<!-- body -->
+  </body>
+</html>
