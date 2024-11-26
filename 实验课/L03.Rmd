@@ -1,31 +1,28 @@
 ---
-title: "L03 实验01"
+title: "L03 实验01 & 函数"
 author: "郑盼盼"
 date: "2024-09-25"
+documentclass: ctexart
+geometry: "left=2.5cm,right=2cm,top=3cm,bottom=2.5cm"
 output:
-  html_document:
-    df_print: paged
-  pdf_document:
-    extra_dependencies:
-      ctex: UTF8
-      sourcecodepro: scale = 0.85
-      sourceserifpro: default
-    fig_caption: true
-    highlight: default
-    latex_engine: xelatex
-    toc: true
+  rticles::ctex:
+    includes:
+      in_header: "wrap-code.tex"
+    fig_caption: yes
+    number_sections: false
+    toc: yes
     toc_depth: 2
-classoptions: preview
+classoption: "hyperref,"
 ---
 
-## 3.0 函数简介
+# 3.0 函数简介
 - **函数**的含义：
 和函数的数学形式：$y=f(x)$ 类似，在R语言中，我们也可以利用函数进行操作；但使用函数操作时，我们需要先思考下面的问题：
     1. 这个函数输入变量 `x` 是什么数据类型？输出变量 `y` 是什么数据类型？
     2. 这个函数的具体功能是什么？
 
-## 3.1 实验1.1 考察模型 $y=\sin x +e$ 产生的数据特点
-### 3.1.1 当 $e$ 为一个固定值时
+# 3.1 实验1.1 考察模型 $y=\sin x +e$ 产生的数据特点
+## 3.1.1 当 $e$ 为一个固定值时
 尝试计算 $x=0, e=0.5$ 时，$y=\sin x +e$ 的值
   ```{R}
   x = 0; e = 0.5;
@@ -33,7 +30,7 @@ classoptions: preview
   y
   ```
 
-### 3.1.2 当 $e$ 为一个随机变量：
+## 3.1.2 当 $e$ 为一个随机变量：
 1. 当 $e$ 以 $0.5$ 的可能性取 $1$，$0.5$ 的可能性取 $0$ 时。比如，我们可以使用如下代码模拟 $y$ 的 $16$ 次观测结果：
     ```{R}
     # n 为试验次数，
@@ -55,9 +52,8 @@ classoptions: preview
       1. `floor()` 函数用于数值的向下取整，例如 `floor(1.1)=1` `floor(1.9)=1`
       2. `log2(x)` 函数对应于 $\log_{2}(x)$，表示以2为底x的对数。 
   
-  
 
-## 3.2 抽样函数 
+## 3.1.3 抽样函数 
 - 我们可以使用 `sample(x, n, replace)` 这个函数，进行投硬币的模拟：
   - `x` 是由样本的可能取值组成的向量（集合），如：在投（匀质）硬币的例子中，可能取值只有“正面”（我们用 `1` 来表示）和“反面”（我们用 `0` 来表示）两种；因此，`x = c(0,1)`
   - `n` 表示的取样（试验）的次数：比如，我们希望模拟抛 `15` 次硬币的每次实验结果，我们就令 `n = 15`
@@ -68,10 +64,13 @@ classoptions: preview
     sample(x, n, replace=T)
     ```
     
+
     
-### Questions
+## Questions
 1. 尝试计算：(<mark>hints: 使用 `sum()` 函数对向量进行求和</mark>)
     1. 正面朝上的频率，反面朝上的频率
     2. 不同的试验次数($10, 10^{2}, 10^{4}, 10^8$)下的出现正面朝上和反面朝上的频率
 2. 尝试模拟1000次掷骰子的实验结果：（<mark>hints: 使用 `1,2,3,4,5,6` 来编码掷骰子的结果</mark>）
     - 并尝试计算 `1` 出现的频率 (<mark>hints: 利用逻辑判断 `==` 和逻辑型转数值型的规则</mark>)
+
+

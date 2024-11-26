@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.25)  20 SEP 2024 20:49
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.25)  13 OCT 2024 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,55 +467,56 @@ File: ctex-c5size.clo 2022/07/14 v2.5.10 c5size option (CTEX)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-mac.def
 File: ctex-fontset-mac.def 2022/07/14 v2.5.10 macOS fonts definition (CTEX)
 
-(/usr/local/texlive/2023/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-macnew.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-macold.
 def
-File: ctex-fontset-macnew.def 2022/07/14 v2.5.10 macOS fonts definition for El 
-Capitan or later version (CTEX)
+File: ctex-fontset-macold.def 2022/07/14 v2.5.10 macOS fonts definition for Yos
+emite or earlier version (CTEX)
 
-Package fontspec Warning: Font "Songti SC Light" does not contain requested
-(fontspec)                Script "CJK".
-
-
-Package fontspec Info: Songti SC Light scale = 0.9663633678182936.
+Package fontspec Warning: Font "STSong" does not contain requested Script
+(fontspec)                "CJK".
 
 
-Package fontspec Info: Songti SC Light scale = 0.9663633678182936.
+Package fontspec Info: STSong scale = 0.9663633678182936.
 
 
-Package fontspec Info: Songti SC Bold scale = 0.9663633678182936.
+Package fontspec Info: Could not resolve font "STKaiti/B" (it probably doesn't
+(fontspec)             exist).
 
 
-Package fontspec Info: Kaiti SC scale = 0.9663633678182936.
+Package fontspec Info: Could not resolve font "STHeiti/I" (it probably doesn't
+(fontspec)             exist).
 
 
-Package fontspec Info: Kaiti SC Bold scale = 0.9663633678182936.
+Package fontspec Info: Could not resolve font "STSong/BI" (it probably doesn't
+(fontspec)             exist).
 
 
-Package fontspec Info: Font family 'SongtiSCLight(0)' created for font 'Songti
-(fontspec)             SC Light' with options
-(fontspec)             [Scale=MatchLowercase,Script={CJK},BoldItalicFont={Kaiti
+Package fontspec Info: STSong scale = 0.9663633678182936.
 
-(fontspec)             SC Bold},BoldFont={Songti SC Bold},ItalicFont={Kaiti
-(fontspec)             SC}].
+
+Package fontspec Info: STHeiti scale = 0.7292692486710272.
+
+
+Package fontspec Info: STKaiti scale = 0.9663633678182936.
+
+
+Package fontspec Info: Font family 'STSong(0)' created for font 'STSong' with
+(fontspec)             options
+(fontspec)             [Scale=MatchLowercase,Script={CJK},BoldFont={STHeiti},It
+alicFont={STKaiti}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9663633678182936]"Songti SC
-(fontspec)             Light/OT:language=dflt;"
+(fontspec)             <->s*[0.9663633678182936]"STSong/OT:language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.9663633678182936]"Songti SC
-(fontspec)             Bold/OT:language=dflt;"
+(fontspec)             <->s*[0.7292692486710272]"STHeiti/OT:language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.9663633678182936]"Kaiti SC/OT:language=dflt;"
+(fontspec)             <->s*[0.9663633678182936]"STKaiti/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.9663633678182936]"Kaiti SC
-(fontspec)             Bold/OT:language=dflt;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 ))) (/usr/local/texlive/2023/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
@@ -1289,7 +1290,7 @@ Package microtype Info: No adjustment of kerning.
 Package hyperref Info: Link coloring OFF on input line 126.
 LaTeX Font Info:    Font shape `TU/SourceSerifPro(0)/m/n' will be
 (Font)              scaled to size 18.06749pt on input line 128.
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/n' will be
+LaTeX Font Info:    Font shape `TU/STSong(0)/m/n' will be
 (Font)              scaled to size 17.45987pt on input line 128.
 LaTeX Font Info:    Font shape `TU/SourceSerifPro(0)/m/n' will be
 (Font)              scaled to size 12.045pt on input line 128.
@@ -1324,16 +1325,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/n' will be
+LaTeX Font Info:    Font shape `TU/STSong(0)/m/n' will be
 (Font)              scaled to size 11.63991pt on input line 128.
 LaTeX Font Info:    Font shape `TU/SourceSerifPro(0)/m/n' will be
 (Font)              scaled to size 15.05624pt on input line 131.
 LaTeX Font Info:    Font shape `TU/SourceSerifPro(0)/b/n' will be
 (Font)              scaled to size 15.05624pt on input line 131.
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/b/n' will be
-(Font)              scaled to size 14.5499pt on input line 131.
+LaTeX Font Info:    Font shape `TU/STSong(0)/b/n' will be
+(Font)              scaled to size 10.97997pt on input line 131.
 (./L02.toc
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/n' will be
+LaTeX Font Info:    Font shape `TU/STSong(0)/m/n' will be
 (Font)              scaled to size 10.18492pt on input line 1.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 10.54048pt on input line 1.
@@ -1353,12 +1354,12 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 LaTeX Font Info:    Font shape `TU/SourceSerifPro(0)/b/n' will be
 (Font)              scaled to size 12.045pt on input line 133.
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/b/n' will be
-(Font)              scaled to size 11.63991pt on input line 133.
+LaTeX Font Info:    Font shape `TU/STSong(0)/b/n' will be
+(Font)              scaled to size 8.78397pt on input line 133.
 LaTeX Font Info:    Font shape `TU/SourceSerifPro(0)/b/n' will be
 (Font)              scaled to size 10.53937pt on input line 137.
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/b/n' will be
-(Font)              scaled to size 10.18492pt on input line 137.
+LaTeX Font Info:    Font shape `TU/STSong(0)/b/n' will be
+(Font)              scaled to size 7.68596pt on input line 137.
 
 Package fontspec Info: Could not resolve font "STFangsong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -1402,19 +1403,19 @@ LaTeX Font Warning: Font shape `TU/STFangsong(0)/m/it' undefined
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/n' will be
 (Font)              scaled to size 8.95853pt on input line 197.
 [2] [3] [4]
-File: ./p1.jpeg Graphic file (type bmp)
-<./p1.jpeg>
+File: ./pics/p1.jpeg Graphic file (type bmp)
+<./pics/p1.jpeg>
 [5] [6] [7]
-File: ./p2.png Graphic file (type bmp)
-<./p2.png>
-File: ./p3.png Graphic file (type bmp)
-<./p3.png>
+File: ./pics/p2.png Graphic file (type bmp)
+<./pics/p2.png>
+File: ./pics/p3.png Graphic file (type bmp)
+<./pics/p3.png>
 [8]
-File: ./p4.png Graphic file (type bmp)
-<./p4.png>
+File: ./pics/p4.png Graphic file (type bmp)
+<./pics/p4.png>
 [9]
-File: ./p5.png Graphic file (type bmp)
-<./p5.png>
+File: ./pics/p5.png Graphic file (type bmp)
+<./pics/p5.png>
 [10] [11] [12] [13]
 File: L02_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (type pdf)
 <use L02_files/figure-latex/unnamed-chunk-37-1.pdf>
@@ -1429,11 +1430,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23574 strings out of 476683
- 479919 string characters out of 5804046
+ 23548 strings out of 476683
+ 478672 string characters out of 5804046
  1863018 words of memory out of 5000000
- 43373 multiletter control sequences out of 15000+600000
- 520868 words of font info for 148 fonts, out of 8000000 for 9000
+ 43342 multiletter control sequences out of 15000+600000
+ 520884 words of font info for 150 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  86i,6n,140p,1000b,1039s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

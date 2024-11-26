@@ -1,0 +1,61 @@
+---
+title: "E03 上机实验03"
+author: "郑盼盼"
+date: "2024-10-24"
+documentclass: ctexart
+geometry: "left=2.5cm,right=2cm,top=3cm,bottom=2.5cm"
+output:
+  rticles::ctex:
+    includes:
+      in_header: "wrap-code.tex"
+    fig_caption: yes
+    number_sections: false
+    toc: yes
+    toc_depth: 2
+classoption: "hyperref,"
+---
+
+
+1. 从 `1:10` 中用取后放回的方法依次抽取 $8$ 个数，计算事件 $A = \{ 1,2,3,4,5 \}$ 的频率。
+    ```{R}
+    A <- c(1,2,3,4,5)
+    samps <- sample(1:10, 8, T)
+    freq = sum(samps %in% A) / 8
+    print(freq)
+    ```
+2. 从 `1:10` 中用取后不放回的方法依次抽取 $8$ 个数，计算事件 $A$ 的频率。
+    ```{R}
+    A <- c(1,2,3,4,5)
+    samps <- sample(1:10, 8, F)
+    freq = sum(samps %in% A) / 8
+    print(freq)
+    ```
+3. 将 1. 重复 $100$ 次，得到 $100$ 个频率值 $x_{1},x_{2},\dots,x_{100}$；将 2. 重复 $100$ 次得到 $100$ 个频率值 $u_{1},u_{2},\dots,u_{100}$；用红色将 $100$ 个点：
+   $$
+	(x_{1},1),(x_{2},1),\dots, (x_{100}, 1)
+	$$
+	绘制在直角坐标系中，用蓝色将 $100$ 个点
+	$$
+	(u_{1},2),(u_{2},2), \dots, (u_{100},2)
+	$$
+	绘制在同一坐标系中（用函数 `points()` 添加新的点）
+    ```{R}
+    x <- c()
+    u <- c()
+    
+    for (i in 1:100) {
+      samp1 <- sample(1:10, 8, T)
+      samp2 <- sample(1:10, 8, F)
+      x <- c(x, sum(samp1 %in% A) / 8)
+      u <- c(u, sum(samp2 %in% A) / 8)
+    }
+    plot(x, rep(1,100), 
+         xlim = c(0,1),
+         ylim=c(0,3),
+         col="red")
+    points(u, rep(2,100),
+           col="blue")
+    ```
+4. 在 3. 中所绘制图上两种颜色点的中心位置坐标都是什么？请解释人们更喜欢用2.中的频率值来估计 $\mathbb{P}(A)$ 的原因
+
+    **答**：中心位置的坐标为`0.5`即事件A发生的概率；但是2.的分布相较而言更为集中。因此，其更适合用于估计 $\mathbb{P}(A)$
