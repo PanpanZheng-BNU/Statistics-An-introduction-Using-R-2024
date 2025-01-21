@@ -266,7 +266,7 @@ plot(k, cumsum((k - lambda)**2*p),
 lines(c(0,30), c(lambda,lambda), lty=2,col="red")
 ```
 
-- **利用大数定理**估计$\xi \sim P(10.5)$ 的数学期望
+- **利用大数定律**估计$\xi \sim P(10.5)$ 的数学期望
 ```{R}
 N = 100000
 sample_from_pois = rpois(N, 10.5)
@@ -364,6 +364,7 @@ lines(x[x < 0], dunif(x[x < 0]), lwd = 2.5, col = "blue")
 points(c(0, 20), dunif(c(0, 20), 0, 20), col = "blue", lwd = 1.5)
 lines(x[x > 20], dunif(x[x > 20]), lwd = 2.5, col = "blue")
 ```
+
 #### 例3 绘制均匀分布的分布函数图像
 若 $\xi \sim U(1,20)$ 绘制 $\xi$ 的分布函数图像：
 ```{R}

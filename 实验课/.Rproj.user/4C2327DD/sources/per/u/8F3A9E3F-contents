@@ -1,0 +1,41 @@
+myData <- data.frame(x = c(rep("文科", 29), rep("理科", 40)), # 文理科生人数
+                     y = c(rep("男", 12), # 文科生中男生人数
+                           rep("女", 17), # 文科生中女生人数
+                           rep("男", 19), # 理科生中男生人数
+                           rep("女", 21)   # 理科生中女生人数))
+                           
+tmpT <- table(myData) #
+# 绘制等高条形图，男生比例对比
+tmpP <- prop.table(tmpT, margin=2) #
+barplot(tmpP,
+        xlim=c(0,3.5), # 
+        legend.text=rownames(tmpP), # 
+        args.legend = list(x="topright") #
+        )
+
+
+m <- 3
+n <- 10000
+hatPra <- data.frame(S2 = rep(0,n), T = rep(0,n))
+for (i in 1:n){
+  tmpSample <- rnorm(3, mean=0, sd=2)
+  hatPra$S2[i] <- var(tmpSample)
+  hatPra$T[i] <- var(tmpSample) * (m-1) / m
+}
+
+boxplot(hatPra,horizontal = T)
+abline(v=4, col="red")
+
+
+
+p <- 0.9
+n <- 10000
+myR <- data.frame("Criterion1" = rep(0,n), "Criterion2" = rep(0,n))
+for (i in 1:n) {
+  x <- rbinom(1, 1, p)
+  myR$Criterion1[i] <- ifelse(x == 1, 0.9 ,0.1)
+  myR$Criterion2[i] <- ifelse(x == 1, 0.1 ,0.9)
+}
+
+sum(myR$Criterion1 == p) / n 
+sum(myR$Criterion2 == p) / n 

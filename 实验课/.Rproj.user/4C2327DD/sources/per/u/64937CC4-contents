@@ -1,0 +1,24 @@
+N = 10000
+x <- runif(N, 0, 1)
+y <- runif(N, 0, 1)
+indx <- x ** 2 + y ** 2 <= 1
+xx <- seq(0,1,by=1e-3)
+yy <- sqrt(1-xx**2)
+
+plot(
+  x[indx], y[indx],
+  type = "p",
+  cex = 0.1,
+  xlim = c(0, 1), ylim = c(0, 1),
+  col = "red",
+  asp = 1
+)
+points(
+  x[!indx], y[!indx],
+  cex = 0.1,
+  type = "p",
+  xlim = c(0, 1), ylim = c(0, 1),
+  col = "blue"
+)
+
+lines(xx,yy, lty=2, col="black", lwd=2)

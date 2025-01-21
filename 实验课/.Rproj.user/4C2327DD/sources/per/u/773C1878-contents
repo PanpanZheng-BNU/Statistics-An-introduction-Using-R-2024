@@ -1,0 +1,31 @@
+m <- 10           # 设置样本量为10
+y <- rnorm(m, 0, 1) # 从标准正态分布中生成10个随机数
+zk <- unique(y)   # 删除y中的重复值，并将无重复值的随机数向量赋给zk
+n <- zk[order(zk)] # 对于zk进行排序（从小到大进行排序）
+f <- 0    # 初始化经验分布函数值为0
+
+# 遍历n
+for (i in 1:length(n)) {
+  # 第一次时使用 plot 函数创建图像；
+  if (i == 1) {
+    plot(c(min(y) - 1, n[1]), c(f, f),
+      type = "l",
+      xlim = c(min(y) - 1, max(y) + 1),
+      ylim = c(0, 1),
+      xlab = "x",
+      ylab = "F(x)"
+    )
+    points(n[1], 0, pch = 1, cex = .8)
+  } else {
+    # 之后使用 lines 和 points 函数向图像中添加新的线和点
+    lines(c(n[i - 1], n[i]), c(f, f))
+    points(n[i], f, pch = 1, cex = .8)
+  }
+  f <- f + sum(y == n[i]) / m  # 迭代计算新的经验分布函数值f
+}
+lines(c(n[length(n)], max(y) + 1), c(1, 1)) # 添加最后一条线
+xx = seq(-3, 3, by = 0.001)
+lines(xx, pnorm(xx),
+      col = "red",
+      lwd = 2,
+      lty = 3)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.25)  23 NOV 2024 13:50
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.25)  30 NOV 2024 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1080,73 +1080,59 @@ uage=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.37756pt on input line 146.
+(Font)              scaled to size 7.37756pt on input line 148.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.26968pt on input line 146.
+(Font)              scaled to size 5.26968pt on input line 148.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.54033pt on input line 146.
+(Font)              scaled to size 10.54033pt on input line 148.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.37823pt on input line 146.
+(Font)              scaled to size 7.37823pt on input line 148.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.27016pt on input line 146.
+(Font)              scaled to size 5.27016pt on input line 148.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.53824pt on input line 146.
+(Font)              scaled to size 10.53824pt on input line 148.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.37677pt on input line 146.
+(Font)              scaled to size 7.37677pt on input line 148.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.26912pt on input line 146.
+(Font)              scaled to size 5.26912pt on input line 148.
 
 LaTeX Font Warning: Font shape `TU/STFangsong(0)/m/it' undefined
-(Font)              using `TU/STFangsong(0)/m/n' instead on input line 153.
+(Font)              using `TU/STFangsong(0)/m/n' instead on input line 155.
 
-File: 第八次作业_demo_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pd
-f)
-<use 第八次作业_demo_files/figure-latex/unnamed-chunk-2-1.pdf>
 [1
 
 ]
-File: 第八次作业_demo_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pd
-f)
-<use 第八次作业_demo_files/figure-latex/unnamed-chunk-3-1.pdf>
 LaTeX Font Info:    Font shape `TU/STSong(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/STSong(0)/m/it' tried instead on input line 
-186.
+235.
 [2]
-File: 第八次作业_demo_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pd
-f)
-<use 第八次作业_demo_files/figure-latex/unnamed-chunk-4-1.pdf>
-[3]
-File: 第八次作业_demo_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pd
-f)
-<use 第八次作业_demo_files/figure-latex/unnamed-chunk-5-1.pdf>
-[4]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.52061pt on input line 253.
+(Font)              scaled to size 5.52061pt on input line 247.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 253.
+(Font)              scaled to size 5.0pt on input line 247.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.52112pt on input line 253.
+(Font)              scaled to size 5.52112pt on input line 247.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 253.
+(Font)              scaled to size 5.00046pt on input line 247.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.52002pt on input line 253.
+(Font)              scaled to size 5.52002pt on input line 247.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 253.
+(Font)              scaled to size 4.99947pt on input line 247.
 LaTeX Font Info:    Font shape `TU/STFangsong(1)/m/n' will be
-(Font)              scaled to size 9.85959pt on input line 262.
-[5] [6] [7] (./第八次作业_demo.aux)
+(Font)              scaled to size 9.85959pt on input line 256.
+[3] [4] (./第八次作业_demo.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23769 strings out of 476683
- 484243 string characters out of 5804046
- 1863018 words of memory out of 5000000
- 43633 multiletter control sequences out of 15000+600000
+ 23736 strings out of 476683
+ 482503 string characters out of 5804046
+ 1864018 words of memory out of 5000000
+ 43606 multiletter control sequences out of 15000+600000
  522515 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,10n,125p,1007b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,10n,125p,1007b,896s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 第八次作业_demo.pdf (7 pages).
+Output written on 第八次作业_demo.pdf (4 pages).

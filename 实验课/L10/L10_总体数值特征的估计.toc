@@ -1,0 +1,15 @@
+\contentsline {section}{10.1 总体均值的估计}{1}{section*.2}%
+\contentsline {subsection}{常用函数}{2}{subsection*.3}%
+\contentsline {subsection}{例}{2}{subsection*.4}%
+\contentsline {section}{10.2 总体分位数的估计}{2}{section*.5}%
+\contentsline {paragraph}{定义4.4.8}{2}{paragraph*.6}%
+\contentsline {section}{10.3 总体众数的估计}{4}{section*.8}%
+\contentsline {subsection}{10.3.1 对于离散型随机变量 (\(X\sim P(1)\))}{4}{subsection*.9}%
+\contentsline {subsection}{10.3.2 对于连续型随机变量 (\(X\sim N(1,9)\))}{5}{subsection*.10}%
+\contentsline {section}{10.4 总体方差的估计}{5}{section*.11}%
+\contentsline {section}{10.5 总体标准差、标准得分和变异系数的估计}{6}{section*.12}%
+\contentsline {paragraph}{样本标准差}{6}{paragraph*.13}%
+\contentsline {paragraph}{标准得分的估计}{6}{paragraph*.14}%
+\contentsline {paragraph}{变异系数的估计}{6}{paragraph*.15}%
+\contentsline {section}{10.6 盒型图的绘制}{7}{section*.16}%
+\contentsline {section}{Questions}{8}{section*.17}%

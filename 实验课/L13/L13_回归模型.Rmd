@@ -1,0 +1,181 @@
+---
+title: "L13-回归模型"
+author: "郑盼盼"
+date: "2024-12-25"
+documentclass: ctexart
+geometry: "left=2.5cm,right=2cm,top=3cm,bottom=2.5cm"
+output:
+  rticles::ctex:
+    includes:
+      in_header: "../wrap-code.tex"
+    fig_caption: yes
+    number_sections: false
+    toc: yes
+    toc_depth: 2
+classoption: "hyperref,"
+---
+
+# 13.1 函数模型与回归模型
+#### 函数模型
+$$
+y = f(x\,\vert \,\theta)
+$$
+函数模型是简述因变量 $y$ 和自变量 $x$ 之间关系的一种模型，其中 $\theta$ 是模型参数，当确定模型参数后，这种模型的 $x$ 能够唯一确定因变量 $y$。
+
+#### 回归模型
+$$
+\begin{cases}
+Y = f(x\,\vert\, \theta) + \varepsilon \\
+\mathbb{E}(\varepsilon) = 0, D(\varepsilon) = \sigma^{2}
+\end{cases}
+$$
+是描述**响应变量** $Y$ 和**解释变量** $x$ 之间关系的另一种模型，其中 $\theta$ 是模型参数，当确定模型参数后，这种模型的响应变量只能用 $f(x\,\vert\,\theta)$ 所近似。
+
+## 通过散点图判断是哪种模型
+通常可以通过样本观测数据 $(x_{i}, y_{i})$ 的散点图来判断数据来自哪种模型：函数模型的样本点都在函数曲线上；回归模型的样本点分布在回归曲线周围。
+
+#### 函数模型
+$$
+y = 0.5x + 1
+$$
+```{R}
+a <- 1; b <- 0.5
+x <- runif(100)
+y <- a + b*x
+plot(x, y, type="p", pch=20)
+abline(a,b, lwd=2, lty=2, col="red")
+```
+
+#### 回归模型
+$$
+\begin{cases}
+y = 0.5x + 1 + \varepsilon \\
+\mathbb{E}(\varepsilon) = 0, \, D(\varepsilon) = \sigma^{2}
+\end{cases}
+$$
+
+```{R}
+a <- 1; b <- 0.5
+x <- runif(100)
+y <- a + b*x +
+	rnorm(100, 0, 0.02)
+plot(x, y, type="p", pch=20)
+abline(a,b, lwd=2, lty=2, col="red")
+```
+
+
+# 13.2 线性回归模型的参数估计
+对于身高 $h$ 和体重 $w$，我们可以使用如下的线性模型进行拟合
+$$
+W = a + bh + \varepsilon
+$$
+
+## 13.2.1 模型拟合
+- `lm(formula, data=)` 使用R语言建立线性模型：
+    - `formula` 的形式为 `响应变量 ~ 解释变量`，即 `~` 左侧为因变量，右侧为自变量，进行回归。
+- 建立模型后 (`model <- lm()`) 
+    1. 我们可以用 `summary(model)` 的方式来查看线性回归模型拟合的参数结果。可用 `summary(model)$r.squared` 的方式获得模型的 $R^{2}$
+    2. 可直接用 `coef(model)` 来查看各参数的估计值
+    3. 利用 `model$residuals` 来查看所有的残差，并可以使用 `sum(model$residuals ^ 2)` 来计算残差平方和。
+    4. 利用 `predict(model)` 可直接计算得到回归模型估计值 $\hat{Y} = f(x\vert \hat{\theta})$
+- `poly(x, m, raw=TRUE)` 用于 $m$ 阶多项式拟合：即拟合 $Y = \beta_{0} + \beta_{1}x + \beta_{2}x^{2} + \dots + \beta_{m}x^{m}$
+
+
+```{R, echo=F}
+set.seed(1)
+```
+```{R}
+h <- runif(1000, min = 160, max = 195) # 模拟身高
+w <- (h-100) * 0.9 + rnorm(1000, 0, 3) # 模拟体重
+tmpData <- data.frame(h = h, w = w) 
+tmpLm <- lm(w ~ h, data=tmpData) # 使用 lm 进行线性模型的回归拟合
+summary(tmpLm) # 总结模型信息
+```
+
+此外，我们可以使用下面的模型进行拟合（$a,b$ 和 $c$ 为模型的参数）
+$$
+W = a + bh + ch^{2} + \varepsilon
+$$
+```{R}
+tmpLm2 <- lm(w ~ h + I(h^2), data=tmpData) # 使用 lm 进行线性模型的回归拟合
+summary(tmpLm2) # 总结模型信息
+```
+```{R}
+RSS1 = sum(tmpLm$residuals ^ 2)
+RSS2 = sum(tmpLm2$residuals ^ 2)
+cat("模型1的残差为 ", RSS1, "\n模型2的残差为 ", RSS2)
+```
+
+## 13.2.2 AIC准则
+随着模型变得复杂，对于观测值的拟合效果会越来越好。但残差平方和过小会导致过拟合的出现，使得模型的泛化能力变差；因此，我们可以根据AIC准则挑选合适的模型：挑选使得
+
+$$
+\text{AIC} = n \log\left(Q(\hat{\theta})\right) + 2k,
+$$
+最小的模型，其中
+
+- $k$ 为模型参数的个数
+- $n$ 为样本量
+
+```{R}
+1000 * log(sum(tmpLm$residuals^2)) - 2 * length(tmpLm$coefficients)
+1000 * log(sum(tmpLm2$residuals^2)) - 2 * length(tmpLm2$coefficients)
+```
+
+
+## 13.2.3 多项式拟合例
+已有观测数据 `x` 和 `Y` 尝试将 `Y` 作为响应变量，`x` 作为解释变量，进行线性回归
+
+```{R}
+# 已有观测数据 x 和 Y
+x<-seq(0.20,6.00,by=0.2)
+Y<-c(-1.56,5.33,0.54,6.99,0.62,4.66,7.87,13.26,12.82,10.56,
+     7.66,13.85,21.94,18.53,28.46,36.26,35.90,39.70,
+     45.35,54.08,60.16,52.95,64.51,72.06,73.68,93.60,
+     91.76,89.83,104.98,111.50)
+myData <- data.frame(x = x, Y = Y)
+```
+
+- 模型1：线性回归模型
+    $$
+    Y= a + bx
+    $$
+    ```{R}
+    myS1<-lm(Y~x, data=myData) #拟合一元线性模型
+    coef(myS1) #输出参数估计
+    ```
+
+- 模型2：没有常数项的二阶多项式回归模型
+    $$
+    Y = bx + cx^{2}
+    $$
+    ```{R}
+    myS2<-lm(Y~-1+poly(x,2,raw=T), data=myData)#拟合没有截距项的二阶曲线
+    coef(myS2) #输出参数估计
+    ```
+- 模型3：仅有二次项的回归模型
+    $$
+    Y = cx^{2}
+    $$
+    ```{R}
+    myS3<-lm(Y~0+I(x^2))#拟合仅包含二次项的模型
+    coef(myS3) #输出参数估计
+    ```
+
+绘制图像，观察三种模型的拟合效果：
+```{R}
+plot(x, Y, type="p")
+abline(myS1, col="red", lty=2, lwd=2)
+lines(x,predict(myS2), col="blue", lty=3, lwd=2)
+lines(x,predict(myS3), col="green", lty=4, lwd=2)
+```
+
+```{R}
+myS1<-lm(Y~x)   #拟合线性模型
+coef(myS1)      #输出参数估计
+sum((myS1$residuals)^2) # 计算残差平方和
+summary(myS1)$r.squared # 获得模型1的R方
+cat("模型拟合参数:",coef(myS1),"\n",
+    "拟合残差平方和:",sum((myS1$residuals)^2),"\n",
+    "R方:",summary(myS1)$r.squared)
+```

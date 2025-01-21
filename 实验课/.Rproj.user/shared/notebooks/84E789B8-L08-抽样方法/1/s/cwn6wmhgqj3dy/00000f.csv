@@ -1,0 +1,11 @@
+"0","k <- sample(1:20,1)"
+"0","if(k==1){"
+"0","  tmpIndex <- 1:21"
+"0","} else"
+"0","{"
+"0","  tmp <- k-1"
+"0","  tmpIndex <- (2+20*tmp):(1+20*k)"
+"0","}"
+"0","tmpS <- x[tmpIndex]"
+"2","Error: object 'x' not found
+"
